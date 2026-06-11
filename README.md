@@ -1,0 +1,223 @@
+# 🎥 AI Video Intelligence Agent
+
+An AI-powered video assistant that allows users to analyze YouTube videos using Large Language Models. Simply paste a YouTube URL to generate summaries in **English** and **Hindi**, and ask questions about the video through an intelligent Retrieval-Augmented Generation (RAG) pipeline.
+
+---
+
+## 🚀 Features
+
+- 🎥 Analyze YouTube videos using a URL
+- 📝 Automatic transcript extraction
+- 🌍 Video summaries in English and Hindi
+- 🤖 AI-powered Question Answering
+- 🔍 Retrieval-Augmented Generation (RAG)
+- 💬 Interactive chat interface
+- ⚡ FastAPI backend for scalable APIs
+- 🧠 Semantic retrieval for accurate responses
+- 🔐 Secure API key management using `.env`
+
+---
+
+# 🏗️ Project Architecture
+
+```
+YouTube URL
+      │
+      ▼
+Transcript Extraction
+      │
+      ▼
+Text Chunking
+      │
+      ▼
+Embeddings
+      │
+      ▼
+Vector Database
+      │
+      ▼
+Retriever (RAG)
+      │
+      ▼
+LLM (Mistral AI)
+      │
+      ▼
+Summary / Question Answering
+```
+
+---
+
+# 🛠️ Tech Stack
+
+## Backend
+
+- Python
+- FastAPI
+
+## AI Framework
+
+- LangChain
+- Mistral AI
+
+## Speech Processing
+
+- YouTube Transcript API / Whisper
+
+## Vector Database
+
+- ChromaDB
+
+## Embeddings
+
+- Sentence Transformers
+- all-MiniLM-L6-v2
+
+---
+
+# 📂 Project Structure
+
+```
+video-agent/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── .env.example
+│
+├── rag/
+│   ├── ingest.py
+│   ├── retriever.py
+│   └── chat.py
+│
+├── api/
+│
+├── utils/
+│
+└── chroma_db/
+```
+
+---
+
+# ⚙️ Installation
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/yourusername/video-intelligence-agent.git
+```
+
+## 2️⃣ Navigate to Project
+
+```bash
+cd video-intelligence-agent
+```
+
+## 3️⃣ Create Virtual Environment
+
+Using UV
+
+```bash
+uv venv
+```
+
+Activate
+
+Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+---
+
+## 4️⃣ Install Dependencies
+
+```bash
+uv pip install -r requirements.txt
+```
+
+---
+
+# 🔑 Environment Variables
+
+Create a `.env` file
+
+```text
+MISTRAL_API_KEY=your_api_key_here
+```
+
+---
+
+# ▶️ Run the Application
+
+```bash
+uvicorn app:app --reload
+```
+
+or
+
+```bash
+streamlit run app.py
+```
+
+(depending on your frontend)
+
+---
+
+# 📌 How It Works
+
+1. Paste a YouTube video URL.
+2. Extract the video transcript.
+3. Split the transcript into chunks.
+4. Generate embeddings.
+5. Store embeddings in ChromaDB.
+6. Retrieve relevant context using RAG.
+7. Generate:
+   - English Summary
+   - Hindi Summary
+   - Answers to user questions
+
+---
+
+# 🧠 Key Concepts Used
+
+- Large Language Models (LLMs)
+- Retrieval-Augmented Generation (RAG)
+- LangChain
+- Semantic Search
+- Embeddings
+- Vector Databases
+- Prompt Engineering
+- Conversational AI
+- FastAPI
+- REST APIs
+
+---
+
+# 🔒 Security
+
+- API keys managed using `.env`
+- Sensitive files excluded using `.gitignore`
+
+---
+
+# 🚀 Future Improvements
+
+- Multi-language support
+- Streaming responses
+- LangGraph integration
+- Video chapter generation
+- Speaker identification
+- OCR support for videos
+- Docker deployment
+- Cloud deployment
+
+---
+
+# 👨‍💻 Author
+
+**Aaron Ben**
+
+---
+
+⭐ If you found this project useful, consider giving it a **star** on GitHub!
